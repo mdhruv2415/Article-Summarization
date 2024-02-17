@@ -11,7 +11,7 @@ require('dotenv').config();
 app.use(express.json());
 app.use(
     cors({
-        origin:'http://localhost:3000',
+        origin:'https://main--endearing-stardust-76723c.netlify.app',
         credentials:true
     })
 )

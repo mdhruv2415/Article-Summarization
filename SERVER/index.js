@@ -22,4 +22,4 @@ app.listen(PORT , () => {
 })
 
 //mapping the routes
-app.use("/api/v1", queryRoute);
+app.use("/", queryRoute);

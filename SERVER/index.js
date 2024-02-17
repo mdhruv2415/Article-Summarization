@@ -9,12 +9,7 @@ dbConnect();
 require('dotenv').config();
 
 app.use(express.json());
-app.use(
-    cors({
-        origin:'https://main--endearing-stardust-76723c.netlify.app',
-        credentials:false
-    })
-)
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT , () => {

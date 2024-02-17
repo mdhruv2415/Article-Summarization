@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(
     cors({
         origin:'https://main--endearing-stardust-76723c.netlify.app',
-        credentials:true
+        credentials:false
     })
 )
 

@@ -1,5 +1,5 @@
 // const BASE_URL = "http://localhost:4000/api/v1"
-const BASE_URL = "https://articlesummarizatin.onrender.com"
+const BASE_URL = "https://articlesummarizatin.onrender.com/api/v1"
 console.log(BASE_URL);
 
 //Auth APIs

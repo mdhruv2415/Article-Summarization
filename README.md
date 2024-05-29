@@ -112,7 +112,7 @@ Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for more details on our code 
 
 For any questions or suggestions, feel free to reach out to us:
 
-- **Email**: support@zeetgeist.com
+- **Email**: mdhruv107gmail.com
 - **GitHub Issues**: [Create an issue](https://github.com/yourusername/zeetgeist/issues)
 
 ---

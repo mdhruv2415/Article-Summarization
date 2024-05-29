@@ -96,28 +96,6 @@ Once the application is running, open your web browser and navigate to `http://l
 - **Response**:
     - `articles`: A list of news articles matching the filters.
 
-#### Example Request
-
-```json
-GET /api/news?category=technology&keywords=AI
-```
-
-#### Example Response
-
-```json
-{
-  "articles": [
-    {
-      "title": "Advancements in AI Technology",
-      "source": "TechNews",
-      "url": "https://technews.example.com/ai-advancements",
-      "publishedAt": "2024-05-29T12:00:00Z"
-    },
-    ...
-  ]
-}
-```
-
 ## Contributing
 
 We welcome contributions to improve Zeetgeist! Here's how you can help:
@@ -129,10 +107,6 @@ We welcome contributions to improve Zeetgeist! Here's how you can help:
 5. Open a Pull Request.
 
 Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for more details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 

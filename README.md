@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+# Zeetgeist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Zeetgeist repository! This project is a web application designed to filter and display the most relevant news sources based on user preferences and various algorithms.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Zeetgeist is a web application that curates and presents news articles from various sources, ensuring that users receive the most relevant and up-to-date news. The platform leverages advanced filtering algorithms and user preferences to provide a personalized news experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Personalized News Feed**: Tailored news feed based on user interests and reading habits.
+- **Source Filtering**: Filters news sources to display only the most credible and relevant articles.
+- **Keyword Alerts**: Set up alerts for specific keywords to get notified when relevant news is published.
+- **Categorization**: Articles categorized by topics such as politics, technology, sports, and more.
+- **User Interaction**: Like, share, and comment on articles to engage with the news community.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [MongoDB](https://www.mongodb.com/) (version 4.4 or higher)
+- [Git](https://git-scm.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/zeetgeist.git
+    cd zeetgeist
+    ```
 
-### `npm run eject`
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Set up environment variables**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Create a `.env` file in the root directory and add the following:
+    ```env
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret
+    PORT=your_port_number
+    NEWS_API_KEY=your_news_api_key
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Start the application**
+    ```bash
+    npm start
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application should now be running on `http://localhost:your_port_number`.
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run tests, use the following command:
+```bash
+npm test
+```
 
-### Code Splitting
+### Building for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To build the project for production, use:
+```bash
+npm run build
+```
 
-### Analyzing the Bundle Size
+### Accessing the Web Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Once the application is running, open your web browser and navigate to `http://localhost:your_port_number` to access Zeetgeist.
 
-### Making a Progressive Web App
+## API Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Endpoint: `/api/news`
 
-### Advanced Configuration
+- **Method**: GET
+- **Description**: Retrieve the most relevant news articles based on user preferences.
+- **Request Parameters**:
+    - `category` (optional): Filter news by category (e.g., politics, technology).
+    - `keywords` (optional): Filter news by specific keywords.
+    - `sources` (optional): Filter news by specific sources.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Response**:
+    - `articles`: A list of news articles matching the filters.
 
-### Deployment
+#### Example Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```json
+GET /api/news?category=technology&keywords=AI
+```
 
-### `npm run build` fails to minify
+#### Example Response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+{
+  "articles": [
+    {
+      "title": "Advancements in AI Technology",
+      "source": "TechNews",
+      "url": "https://technews.example.com/ai-advancements",
+      "publishedAt": "2024-05-29T12:00:00Z"
+    },
+    ...
+  ]
+}
+```
+
+## Contributing
+
+We welcome contributions to improve Zeetgeist! Here's how you can help:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature-name`).
+5. Open a Pull Request.
+
+Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for more details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or suggestions, feel free to reach out to us:
+
+- **Email**: support@zeetgeist.com
+- **GitHub Issues**: [Create an issue](https://github.com/yourusername/zeetgeist/issues)
+
+---
+
+Thank you for contributing to Zeetgeist! Together, we can create a better way to stay informed with the most relevant news.
+
+
